@@ -1,24 +1,26 @@
 import java.util.Scanner;
 
 public class Palindrome {
+    String s;
+    Palindrome(){
+        Scanner ss= new Scanner(System.in);
+        s= ss.next();
+    }
 
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
         Palindrome obj = new Palindrome();
-        int a = s.nextInt();
-        int b = a;
-        int c;
-        int d = 0;
-        while(a>=1){
-          c=a%10;
-            d = (10 * d) + c;
-          a=a/10;
+        char c;
+        String s1 = "";
+        int l = obj.s.length();
+        for(int i=l-1;i>=0;i--){
+            c=obj.s.charAt(i);
+            s1 += Character.toString(c);
         }
-        if(d==b){
-            System.out.println(b+ " is a palindrome");
+        if(obj.s.equals(s1)){
+            System.out.println("String is Palindrome");
         }
         else{
-            System.out.println(b+ " is not a palindrome");
+            System.out.println("String is not Palindrome");
         }
     }
 }
